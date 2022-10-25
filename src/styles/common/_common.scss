@@ -1,0 +1,40 @@
+// Vendor
+
+@import '../vendor/normalize';
+
+// Vars
+
+@import '../vars/colors';
+@import '../vars/base';
+
+// Mixins
+
+@import '../mixins/rem';
+@import '../mixins/font-face';
+@import '../mixins/line-height';
+@import '../mixins/breakpoint';
+@import '../mixins/mouseDevice';
+@import '../mixins/touchDevice';
+@import '../mixins/visually-hidden';
+
+// Fonts
+
+@import '../fonts/fonts';
+
+// Settings
+
+@import '../settings/settings';
+
+// components
+
+@import '../components/logo';
+@import '../components/means-of-communication';
+@import '../components/change-lang';
+@import '../components/search';
+@import '../components/navigation';
+@import '../components/burger-trigger';
+
+// section
+
+@import '../section/header';
+@import '../section/burger-menu';

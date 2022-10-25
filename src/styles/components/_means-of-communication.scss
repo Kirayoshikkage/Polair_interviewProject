@@ -1,0 +1,13 @@
+.means-of-communication {
+  &__icon {
+    width: rem(15);
+    height: rem(12);
+    fill: var(--color-prussianBlue);
+  }
+
+  &__text {
+    font-size: rem(14);
+    line-height: lh(22, 14);
+    color: var(--color-prussianBlue);
+  }
+}

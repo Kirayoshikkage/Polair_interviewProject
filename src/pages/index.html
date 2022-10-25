@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polair</title>
+    <link href="styles/index.css" rel="stylesheet" />
+    <script src="scripts/index.js" defer></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__item header__item_up">
+        <div class="container">
+          <a class="logo" href="index.html">
+            <svg class="logo__icon" aria-label="POLAIR">
+              <use xlink:href="img/sprite.svg#logo"></use>
+            </svg>
+          </a>
+          <small class="header__dec">
+            Профессиональное оборудование для предприятий общественного питания
+            и торговли
+          </small>
+          <a
+            class="means-of-communication"
+            href="mailto:matviei.maksimov@bk.ru"
+          >
+            <svg class="means-of-communication__icon">
+              <use xlink:href="img/sprite.svg#email-icon"></use>
+            </svg>
+            <span class="means-of-communication__text">
+              Обратная связь
+              <span class="visually-hidden">по почте</span>
+            </span>
+          </a>
+          <button class="change-lang" lang="en">
+            <span class="visually-hidden">Сменить язык на</span>
+            Eng
+          </button>
+          <button class="search">
+            <svg class="search__icon" aria-label="Поиск">
+              <use xlink:href="img/sprite.svg#search-icon"></use>
+            </svg>
+          </button>
+          <button class="burger-trigger" type="button">
+            <span class="burger-trigger__item"></span>
+            <span class="burger-trigger__item"></span>
+            <span class="burger-trigger__item"></span>
+          </button>
+        </div>
+      </div>
+      <div class="header__item header__item_down">
+        <div class="container">
+          <nav class="navigation">
+            <ul class="navigation__list">
+              <li class="navigation__item">
+                <a class="navigation__link" href="#">Продукция</a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link" href="#">Где купить</a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link" href="#">Сервис и поддержка</a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link" href="#">Решения</a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link" href="#">О компании</a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link" href="#">Медиа</a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link" href="#">Новости</a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link" href="#">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="burger-menu">
+        <div class="burger-menu__body">
+          <div class="burger-menu__content">
+            <div class="container">
+              <p class="burger-menu__dec">
+                Профессиональное оборудование для предприятий общественного
+                питания и торговли
+              </p>
+              <a
+                class="means-of-communication"
+                href="mailto:matviei.maksimov@bk.ru"
+              >
+                <svg class="means-of-communication__icon">
+                  <use xlink:href="img/sprite.svg#email-icon"></use>
+                </svg>
+                <span class="means-of-communication__text">
+                  Обратная связь
+                  <span class="visually-hidden">по почте</span>
+                </span>
+              </a>
+              <button class="change-lang" lang="en">
+                <span class="visually-hidden">Сменить язык на</span>
+                Eng
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer"></footer>
+  </body>
+</html>

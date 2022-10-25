@@ -1,0 +1,29 @@
+@mixin x-large {
+  @media (max-width: rem(1399.98)) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (max-width: rem(1199.98)) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (max-width: rem(991.98)) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: rem(767.98)) {
+    @content;
+  }
+}
+
+@mixin x-small {
+  @media (max-width: rem(575.98)) {
+    @content;
+  }
+}

@@ -1,0 +1,112 @@
+.header {
+  &__item {
+    &_up {
+      position: relative;
+      z-index: 101;
+      border-bottom: rem(1) solid var(--color-ecruWhite);
+      padding: rem(24) 0;
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: rem(32);
+        width: 100%;
+
+        @include x-small {
+          gap: rem(20);
+        }
+      }
+
+      @include x-small {
+        border-bottom: none;
+        padding: rem(16) 0 rem(12);
+      }
+    }
+
+    &_down {
+      padding: 1rem 0 0;
+    }
+  }
+
+  .logo__icon {
+    fill: var(--color-prussianBlue);
+
+    @include x-small {
+      width: rem(129);
+      height: rem(20);
+    }
+  }
+
+  &__dec {
+    margin: 0 auto 0 0;
+    max-width: rem(290);
+    font-size: rem(11);
+    line-height: lh(17, 11);
+    color: var(--color-gray);
+  }
+
+  .means-of-communication {
+    display: flex;
+    align-items: center;
+    gap: rem(6);
+
+    &__icon {
+      flex-shrink: 0;
+    }
+
+    @include medium {
+      &__text {
+        @include visually-hidden;
+      }
+    }
+  }
+
+  .burger-trigger {
+    display: none;
+  }
+
+  .navigation {
+    overflow-x: auto;
+    padding-bottom: 1rem;
+
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      gap: rem(24);
+
+      @include touch-device {
+        gap: rem(10);
+      }
+    }
+
+    &__item {
+      flex-shrink: 0;
+    }
+
+    @include touch-device {
+      &__link {
+        display: inline-block;
+        border-radius: rem(4);
+        padding: rem(8) rem(12);
+        background-color: var(--color-athensGray);
+      }
+    }
+  }
+
+  @include small {
+    .logo {
+      margin: 0 auto 0 0;
+    }
+
+    .burger-trigger {
+      display: grid;
+    }
+
+    &__dec,
+    .means-of-communication,
+    .change-lang {
+      display: none;
+    }
+  }
+}
