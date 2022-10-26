@@ -1,0 +1,13 @@
+.button {
+  border-radius: rem(2);
+  font-size: rem(15);
+  line-height: lh(22, 15);
+
+  &_border {
+    border: rem(1) solid var(--color-prussianBlue);
+  }
+
+  &_color-prussianBlue {
+    color: var(--color-prussianBlue);
+  }
+}
