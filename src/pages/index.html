@@ -407,9 +407,9 @@
         <div class="container">
           <div class="products__item">
             <h2 class="title">Продукция</h2>
-            <a class="products__link" href="#">
-              <span>Перейти в каталог</span>
-              <svg class="products__icon">
+            <a class="link-with-arrow" href="#">
+              <span class="link-with-arrow__text">Перейти в каталог</span>
+              <svg class="link-with-arrow__icon">
                 <use xlink:href="img/sprite.svg#arrow"></use>
               </svg>
             </a>
@@ -526,6 +526,77 @@
               </div>
             </li>
           </ul>
+        </div>
+      </section>
+      <section class="about-group-companies">
+        <div class="about-group-companies__item">
+          <picture>
+            <source
+              type="image/webp"
+              media="(min-width: 2048px)"
+              srcset="
+                img/plate-berries-desctop@1.5x.webp,
+                img/plate-berries-desctop@2x.webp   2x,
+                img/plate-berries-desctop@3x.webp   3x
+              "
+            />
+            <source
+              type="image/webp"
+              media="(max-width: 2047.98px) and (min-width: 992px)"
+              srcset="
+                img/plate-berries-desctop@1x.webp,
+                img/plate-berries-desctop@2x.webp 2x,
+                img/plate-berries-desctop@3x.webp 3x
+              "
+            />
+            <source
+              type="image/webp"
+              media="(max-width: 991.98px) and (min-width: 576px)"
+              srcset="
+                img/plate-berries-tablet@1x.webp,
+                img/plate-berries-tablet@2x.webp 2x,
+                img/plate-berries-tablet@3x.webp 3x
+              "
+            />
+            <source
+              type="image/webp"
+              media="(max-width: 575.98px)"
+              srcset="
+                img/plate-berries-mobile@1x.webp,
+                img/plate-berries-mobile@2x.webp 2x,
+                img/plate-berries-mobile@3x.webp 3x
+              "
+            />
+            <img
+              class="about-group-companies__img"
+              src="img/plate-berries-desctop@1x.webp"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              width="720"
+              height="450"
+            />
+          </picture>
+        </div>
+        <div
+          class="about-group-companies__item about-group-companies__item_content"
+        >
+          <div class="about-group-companies__content">
+            <h2 class="about-group-companies__title">о группе компаний</h2>
+            <h3 class="about-group-companies__subtitle">
+              Высокие стандарты качества
+            </h3>
+            <p class="about-group-companies__desc">
+              Продукция Polair™ проходит 100% сквозной контроль качества
+              и использует экологичные технологии производства.
+            </p>
+            <a class="link-with-arrow" href="#">
+              <span class="link-with-arrow__text">Больше о нас</span>
+              <svg class="link-with-arrow__icon">
+                <use xlink:href="img/sprite.svg#arrow"></use>
+              </svg>
+            </a>
+          </div>
         </div>
       </section>
     </main>

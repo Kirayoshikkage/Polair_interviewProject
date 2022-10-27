@@ -21,22 +21,6 @@
     color: var(--color-prussianBlue);
   }
 
-  &__link {
-    font-size: rem(15);
-    line-height: lh(22, 15);
-    color: var(--color-prussianBlue);
-
-    span {
-      padding-right: rem(4);
-    }
-  }
-
-  &__icon {
-    width: rem(12);
-    height: rem(12);
-    transform: translateY(rem(1));
-  }
-
   &__list {
     display: flex;
     flex-wrap: wrap;

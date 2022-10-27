@@ -1,0 +1,62 @@
+.about-group-companies {
+  display: flex;
+
+  &__item {
+    flex: 1 1 50%;
+
+    &_content {
+      display: flex;
+      align-items: center;
+      padding: rem(104) 1rem rem(104) rem(80);
+
+      @include medium {
+        padding-left: rem(40);
+      }
+
+      @include x-small {
+        padding: rem(56) 1rem;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    @include x-small {
+      height: rem(225);
+    }
+  }
+
+  &__content {
+    max-width: rem(418);
+  }
+
+  &__title {
+    margin: 0 0 rem(8);
+    font-weight: 600;
+    font-size: rem(13);
+    line-height: lh(18, 13);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-gray);
+  }
+
+  &__subtitle {
+    margin: 0 0 1rem;
+
+    @extend .title;
+  }
+
+  &__desc {
+    margin: 0 0 2rem;
+    font-size: rem(15);
+    line-height: lh(26, 15);
+    color: var(--color-tundora);
+  }
+
+  @include x-small {
+    flex-direction: column;
+  }
+}
