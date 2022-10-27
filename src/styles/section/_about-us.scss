@@ -1,0 +1,122 @@
+.about-us {
+  padding: rem(80) 0;
+  background-color: var(--color-prussianBlue);
+
+  &__desc {
+    margin: 0 auto rem(100);
+    max-width: rem(788);
+    font-size: rem(23);
+    line-height: lh(30, 23);
+    text-align: center;
+    color: var(--color-white);
+
+    @include x-small {
+      margin: 0 auto rem(48);
+      font-size: rem(18);
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: rem(48) rem(60);
+    grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr));
+    padding-left: rem(47);
+
+    @include small {
+      padding-left: rem(40);
+    }
+
+    @include x-small {
+      gap: rem(34) 2rem;
+      grid-template-columns: 1fr;
+      padding-left: 0;
+      text-align: center;
+    }
+
+    @media (orientation: landscape) and (max-width: rem(575.98)) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr));
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 35%;
+      z-index: 1;
+      width: rem(94);
+      height: rem(96);
+      background-size: rem(94) rem(96);
+      background-repeat: no-repeat;
+      transform: translate(-50%, -50%);
+
+      @include small {
+        width: rem(80);
+        height: rem(80);
+        background-size: rem(80) rem(80);
+      }
+    }
+
+    @include x-small {
+      &::before {
+        left: 50%;
+        top: 50%;
+      }
+
+      &:nth-child(odd)::before {
+        transform: translate(0, -50%);
+      }
+
+      &:nth-child(even)::before {
+        transform: translate(-100%, -50%);
+      }
+    }
+
+    @each $icon in (rhombus, heart, circle, ruby) {
+      &_#{$icon}::before {
+        background-image: url('../img/#{$icon}.svg');
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__subtitle {
+    margin: 0 0 rem(8);
+    font-weight: 600;
+    font-size: rem(51);
+    line-height: lh(56, 51);
+    color: var(--color-white);
+
+    * {
+      font-weight: inherit;
+      font-size: rem(23);
+      line-height: lh(25, 23);
+
+      @include small {
+        font-size: rem(20);
+      }
+    }
+
+    @include small {
+      font-size: rem(44);
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-size: rem(15);
+    line-height: lh(22, 15);
+    color: var(--color-white);
+  }
+
+  @include x-small {
+    padding: rem(46) 0;
+  }
+}
