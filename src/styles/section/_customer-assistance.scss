@@ -33,7 +33,7 @@
 
       @include x-small {
         align-self: center;
-        grid-template-columns: rem(288);
+        grid-template-columns: minmax(0, rem(288));
       }
     }
   }
