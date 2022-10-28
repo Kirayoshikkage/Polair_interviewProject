@@ -7,7 +7,15 @@
     border: rem(1) solid var(--color-prussianBlue);
   }
 
+  &_bg-prussianBlue {
+    background-color: var(--color-prussianBlue);
+  }
+
   &_color-prussianBlue {
     color: var(--color-prussianBlue);
+  }
+
+  &_color-white {
+    color: var(--color-white);
   }
 }

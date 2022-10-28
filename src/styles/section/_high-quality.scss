@@ -1,4 +1,4 @@
-.about-group-companies {
+.high-quality {
   display: flex;
 
   &__item {
@@ -33,20 +33,13 @@
     max-width: rem(418);
   }
 
-  &__title {
+  .tag {
+    display: block;
     margin: 0 0 rem(8);
-    font-weight: 600;
-    font-size: rem(13);
-    line-height: lh(18, 13);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-gray);
   }
 
-  &__subtitle {
+  .title {
     margin: 0 0 1rem;
-
-    @extend .title;
   }
 
   &__desc {

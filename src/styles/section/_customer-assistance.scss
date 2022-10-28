@@ -1,0 +1,82 @@
+.customer-assistance {
+  padding: rem(64) 0;
+
+  .container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: rem(48);
+
+    @include medium {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    &_info {
+      flex: 0 1 rem(282);
+
+      @include medium {
+        flex: 0 1 auto;
+      }
+    }
+
+    &_cards {
+      display: grid;
+      flex: 0 1 rem(792);
+      gap: rem(40) rem(24);
+      grid-template-columns: repeat(2, 1fr);
+
+      @include medium {
+        flex: 0 1 auto;
+      }
+
+      @include x-small {
+        align-self: center;
+        grid-template-columns: rem(288);
+      }
+    }
+  }
+
+  .tag {
+    display: block;
+    margin: 0 0 rem(8);
+  }
+
+  .title {
+    margin: 0 0 1rem;
+  }
+
+  &__desc {
+    margin: 0;
+    font-size: rem(15);
+    line-height: lh(26, 15);
+    color: var(--color-tundora);
+  }
+
+  @include x-small {
+    padding: rem(52) 0;
+  }
+
+  @media (orientation: landscape) and (max-width: 991.98px) and (min-width: rem(568)) and (max-height: rem(539.98)) {
+    &__item_cards {
+      grid-template-columns: 1fr;
+    }
+
+    .configurator-card {
+      flex-direction: row;
+      align-items: center;
+
+      &::before {
+        left: auto;
+        right: 0;
+        width: 75%;
+        height: 100%;
+      }
+
+      &__item_img {
+        flex-shrink: 0;
+      }
+    }
+  }
+}
