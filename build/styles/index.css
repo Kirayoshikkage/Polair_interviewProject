@@ -372,13 +372,13 @@ body {
 .button_border, .hero .button {
   border: 0.0625rem solid var(--color-prussianBlue);
 }
-.button_bg-prussianBlue, .configurator-card .button {
+.button_bg-prussianBlue, .equipment-catalog .button, .configurator-card .button {
   background-color: var(--color-prussianBlue);
 }
 .button_color-prussianBlue, .hero .button {
   color: var(--color-prussianBlue);
 }
-.button_color-white, .configurator-card .button {
+.button_color-white, .equipment-catalog .button, .configurator-card .button {
   color: var(--color-white);
 }
 
@@ -1566,5 +1566,92 @@ button.swiper-pagination-bullet {
   }
   .news__item_list > li:nth-child(even) .news-card {
     flex-direction: row-reverse;
+  }
+}
+
+.equipment-catalog {
+  padding: 10rem 0 3rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--color-prussianBlue);
+}
+.equipment-catalog__content {
+  border-radius: 0.125rem;
+  padding: 2.5rem;
+  max-width: 29.5rem;
+  background-color: var(--color-white);
+}
+@media (max-width: 47.99875rem) {
+  .equipment-catalog__content {
+    max-width: 100%;
+  }
+}
+@media (max-width: 35.99875rem) {
+  .equipment-catalog__content {
+    padding: 1.5rem 1rem;
+  }
+}
+.equipment-catalog .title, .equipment-catalog .configurator-card__subtitle {
+  margin: 0 0 1rem;
+}
+.equipment-catalog__desc {
+  margin: 0 0 2.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.7333333333;
+  color: var(--color-tundora);
+}
+.equipment-catalog .button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+}
+@media (max-width: 35.99875rem) {
+  .equipment-catalog .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (orientation: landscape) and (max-width: 61.99875rem) and (max-height: 31.25rem) {
+  .equipment-catalog {
+    padding: 3rem 0;
+  }
+}
+@media (min-width: 2048px) {
+  .equipment-catalog {
+    background-image: url("../img/equipment-catalog-bg-desctop@1.5x.webp");
+  }
+}
+@media (max-width: 2047.98px) and (min-width: 992px) {
+  .equipment-catalog {
+    background-image: url("../img/equipment-catalog-bg-desctop@1x.webp");
+  }
+}
+@media (min-width: 992px) and (min-resolution: 2dppx) {
+  .equipment-catalog {
+    background-image: url("../img/equipment-catalog-bg-desctop@2x.webp");
+  }
+}
+@media (min-width: 992px) and (min-resolution: 3dppx) {
+  .equipment-catalog {
+    background-image: url("../img/equipment-catalog-bg-desctop@3x.webp");
+  }
+}
+@media (max-width: 991.98px) and (min-width: 576px) {
+  .equipment-catalog {
+    background-image: url("../img/equipment-catalog-bg-tablet@1x.webp");
+  }
+}
+@media (max-width: 991.98px) and (min-width: 576px) and (min-resolution: 2dppx) {
+  .equipment-catalog {
+    background-image: url("../img/equipment-catalog-bg-tablet@2x.webp");
+  }
+}
+@media (max-width: 991.98px) and (min-width: 576px) and (min-resolution: 3dppx) {
+  .equipment-catalog {
+    background-image: url("../img/equipment-catalog-bg-tablet@3x.webp");
+  }
+}
+@media (max-width: 575.98px) {
+  .equipment-catalog {
+    background-image: url("../img/equipment-catalog-bg-mobile@1x.webp");
   }
 }
