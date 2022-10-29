@@ -1,0 +1,51 @@
+.brand {
+  margin: 0;
+  height: 100%;
+
+  &__link {
+    display: inline-block;
+    margin: 0 0 rem(8);
+    outline: none;
+    width: rem(180);
+    height: rem(48);
+  }
+
+  &__logo {
+    width: 100%;
+    height: 100%;
+    fill: var(--color-gray);
+    transition: fill $transitionDuration;
+  }
+
+  &__desc {
+    margin: 0;
+    font-size: rem(14);
+    line-height: lh(22, 14);
+    color: var(--color-gray);
+    transition: color $transitionDuration;
+
+    @include x-small {
+      font-size: rem(13);
+    }
+  }
+
+  @include mouse-device {
+    .brand__link:focus > .brand__logo {
+      fill: var(--color-prussianBlue);
+    }
+
+    .brand__link:focus ~ .brand__desc {
+      color: var(--color-tundora);
+    }
+
+    &:hover {
+      .brand__logo {
+        fill: var(--color-prussianBlue);
+      }
+
+      .brand__desc {
+        color: var(--color-tundora);
+      }
+    }
+  }
+}

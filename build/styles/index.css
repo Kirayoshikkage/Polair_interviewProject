@@ -1083,6 +1083,50 @@ button.swiper-pagination-bullet {
   line-height: 1.5833333333;
 }
 
+.brand {
+  margin: 0;
+  height: 100%;
+}
+.brand__link {
+  display: inline-block;
+  margin: 0 0 0.5rem;
+  outline: none;
+  width: 11.25rem;
+  height: 3rem;
+}
+.brand__logo {
+  width: 100%;
+  height: 100%;
+  fill: var(--color-gray);
+  transition: fill 0.6s;
+}
+.brand__desc {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5714285714;
+  color: var(--color-gray);
+  transition: color 0.6s;
+}
+@media (max-width: 35.99875rem) {
+  .brand__desc {
+    font-size: 0.8125rem;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .brand .brand__link:focus > .brand__logo {
+    fill: var(--color-prussianBlue);
+  }
+  .brand .brand__link:focus ~ .brand__desc {
+    color: var(--color-tundora);
+  }
+  .brand:hover .brand__logo {
+    fill: var(--color-prussianBlue);
+  }
+  .brand:hover .brand__desc {
+    color: var(--color-tundora);
+  }
+}
+
 .hero {
   background: linear-gradient(90deg, rgb(247, 247, 248) 70%, rgb(96, 192, 195) 70%);
 }
@@ -1653,5 +1697,65 @@ button.swiper-pagination-bullet {
 @media (max-width: 575.98px) {
   .equipment-catalog {
     background-image: url("../img/equipment-catalog-bg-mobile@1x.webp");
+  }
+}
+
+.our-brands {
+  padding: 4rem 0;
+}
+.our-brands .title, .our-brands .configurator-card__subtitle {
+  margin: 0 0 2.5rem;
+}
+@media (max-width: 35.99875rem) {
+  .our-brands .title, .our-brands .configurator-card__subtitle {
+    position: absolute;
+    clip-path: inset(100%);
+    overflow: hidden;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    white-space: nowrap;
+    clip: rect(0 0 0 0);
+  }
+}
+.our-brands .swiper-slide {
+  border-left: 0.0625rem solid var(--color-mercury);
+  padding-left: 1rem;
+}
+@media (max-width: 35.99875rem) {
+  .our-brands {
+    padding: 2.875rem 0;
+  }
+  .our-brands .swiper {
+    padding-bottom: 3rem;
+  }
+  .our-brands .swiper-wrapper {
+    height: 100%;
+  }
+  .our-brands .swiper-slide {
+    height: auto;
+  }
+  .our-brands .swiper-pagination {
+    bottom: 0;
+  }
+  .our-brands .swiper-pagination-bullet {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--color-prussianBlue);
+  }
+}
+@media (min-width: 36rem) {
+  .our-brands .swiper-wrapper {
+    display: grid;
+    gap: 2.5rem 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(15.25rem, 1fr));
+    /* stylelint-disable-next-line declaration-no-important */
+    transform: none !important;
+  }
+  .our-brands .swiper-slide {
+    /* stylelint-disable-next-line declaration-no-important */
+    width: auto !important;
   }
 }

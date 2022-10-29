@@ -677,10 +677,15 @@ class FocusLockSliders {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "heroSlider": function() { return /* binding */ heroSlider; }
+/* harmony export */   "heroSlider": function() { return /* binding */ heroSlider; },
+/* harmony export */   "ourBrandsSlider": function() { return /* binding */ ourBrandsSlider; }
 /* harmony export */ });
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 /* harmony import */ var _components_FocusLockSliders_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/FocusLockSliders.js */ "./src/scripts/components/FocusLockSliders.js");
+/* harmony import */ var _debounce_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./debounce.js */ "./src/scripts/helpers/debounce.js");
+/* harmony import */ var _getFontSizeBody_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getFontSizeBody.js */ "./src/scripts/helpers/getFontSizeBody.js");
+
+
 
 
 
@@ -727,6 +732,92 @@ function heroSlider() {
   swiper.on('slideChange', () => {
     focusLock.updatesFocusLock();
   });
+}
+
+function ourBrandsSlider() {
+  const slider = '.our-brands-slider';
+  let activeSlide = null;
+  let slides = null;
+  const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
+    modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Keyboard, swiper__WEBPACK_IMPORTED_MODULE_0__.A11y],
+    keyboard: {
+      enabled: true
+    },
+    a11y: {
+      firstSlideMessage: 'Это первый слайд',
+      lastSlideMessage: 'Это последний слайд',
+      paginationBulletMessage: 'Перейти к слайду {{index}}'
+    },
+    watchSlidesProgress: true,
+    pagination: {
+      el: '.swiper-pagination',
+      dynamicBullets: true,
+      clickable: true
+    },
+    init: false,
+    breakpoints: {
+      0: {
+        enabled: true
+      },
+      // 36rem - 576px
+      [(0,_getFontSizeBody_js__WEBPACK_IMPORTED_MODULE_3__["default"])() * 36]: {
+        enabled: false
+      }
+    },
+    on: {
+      init() {
+        activeSlide = swiper.slides[swiper.activeIndex];
+        slides = swiper.slides;
+        slides.forEach(slide => {
+          if (slide === activeSlide) return;
+          slide.querySelector('.brand').setAttribute('aria-hidden', true);
+        });
+      },
+
+      afterInit() {
+        swiper.on('breakpoint', (swiperParam, breakpointParams) => {
+          const {
+            enabled
+          } = breakpointParams;
+          slides.forEach(slide => {
+            if (!enabled) {
+              slide.querySelector('.brand').setAttribute('aria-hidden', false);
+              return;
+            }
+
+            if (slide === activeSlide) return;
+            slide.querySelector('.brand').setAttribute('aria-hidden', true);
+          });
+        });
+      },
+
+      slideChange() {
+        const newActiveSlide = slides[swiper.activeIndex];
+        activeSlide.querySelector('.brand').setAttribute('aria-hidden', true);
+        activeSlide = newActiveSlide;
+        activeSlide.querySelector('.brand').setAttribute('aria-hidden', false);
+      }
+
+    }
+  });
+
+  function swiperInitByBreakpoint() {
+    const width = window.innerWidth; // 36rem - 576px
+
+    if (width >= (0,_getFontSizeBody_js__WEBPACK_IMPORTED_MODULE_3__["default"])() * 36) return;
+    swiper.init();
+  }
+
+  const wrapperSwiperInitByBreakpoint = (0,_debounce_js__WEBPACK_IMPORTED_MODULE_2__["default"])(() => {
+    if (swiper.initialized) {
+      window.removeEventListener('resize', wrapperSwiperInitByBreakpoint);
+      return;
+    }
+
+    swiperInitByBreakpoint();
+  }, 200);
+  window.addEventListener('resize', wrapperSwiperInitByBreakpoint);
+  swiperInitByBreakpoint();
 }
 
 
@@ -13672,6 +13763,7 @@ __webpack_require__.r(__webpack_exports__);
   (0,_common_common_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
 
   (0,_helpers_configuresSliders_js__WEBPACK_IMPORTED_MODULE_2__.heroSlider)();
+  (0,_helpers_configuresSliders_js__WEBPACK_IMPORTED_MODULE_2__.ourBrandsSlider)();
 });
 }();
 /******/ })()
