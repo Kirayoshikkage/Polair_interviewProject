@@ -1,4 +1,5 @@
 import BurgerMenu from '../components/BurgerMenu.js';
+import Breakpoints from '../components/Breakpoints.js';
 import getFontSizeBody from '../helpers/getFontSizeBody.js';
 import FocusLock from '../components/FocusLock.js';
 
@@ -13,7 +14,9 @@ export default function _common() {
     trigger: '.header .burger-trigger',
     body: '.burger-menu__body',
     focusLock: focusLockBurgerMenu,
-    breakpoints: {
+  });
+  const breakpoints = new Breakpoints({
+    minWidth: {
       // 48rem - 768px
       [getFontSizeBody() * 48]: () => {
         if (burgerMenu.isOpen()) {
@@ -23,6 +26,7 @@ export default function _common() {
     },
   });
 
+  breakpoints.init();
   focusLockBurgerMenu.init();
   burgerMenu.init();
 }
