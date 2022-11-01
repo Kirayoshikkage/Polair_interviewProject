@@ -54,14 +54,87 @@
         <div class="container">
           <nav class="navigation">
             <ul class="navigation__list">
-              <li class="navigation__item">
-                <a class="navigation__link" href="#">Продукция</a>
+              <li
+                class="navigation__item dropdown-content footer-products-dropdown-content"
+              >
+                <button class="dropdown-content__trigger navigation__link">
+                  <span>Продукция</span>
+                  <svg class="dropdown-icon">
+                    <use xlink:href="img/sprite.svg#arrow"></use>
+                  </svg>
+                </button>
+                <div class="drop-down-animation body dropdown-content__body">
+                  <ul class="content dropdown-content__content">
+                    <li>
+                      <a href="#">Шкафы холодильные</a>
+                    </li>
+                    <li>
+                      <a href="#">Столы холодильные</a>
+                    </li>
+                    <li>
+                      <a href="#">Камеры холодильные</a>
+                    </li>
+                    <li>
+                      <a href="#">Машины холодильные</a>
+                    </li>
+                    <li>
+                      <a href="#">Шоковая заморозка</a>
+                    </li>
+                    <li>
+                      <a href="#">Лари морозильные</a>
+                    </li>
+                    <li>
+                      <a href="#">Модульные стеллажные системы</a>
+                    </li>
+                    <li>
+                      <a href="#">Оборудование для пекарен</a>
+                    </li>
+                    <li>
+                      <a href="#">Барные столы и шкафы</a>
+                    </li>
+                    <li>
+                      <a href="#">Шкафы для вызревания</a>
+                    </li>
+                    <li>
+                      <a href="#">Продуктоматы iCell</a>
+                    </li>
+                    <li>
+                      <a href="#">Термоконтейнеры FoodLine</a>
+                    </li>
+                    <li>
+                      <a href="#">Шкафы медицинские</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li
+                class="navigation__item dropdown-content footer-supports-dropdown-content"
+              >
+                <button class="dropdown-content__trigger navigation__link">
+                  <span>Сервис и поддержка</span>
+                  <svg class="dropdown-icon">
+                    <use xlink:href="img/sprite.svg#arrow"></use>
+                  </svg>
+                </button>
+                <div class="drop-down-animation body dropdown-content__body">
+                  <ul class="content dropdown-content__content">
+                    <li>
+                      <a href="#">Найти авторизованный сервисный центр</a>
+                    </li>
+                    <li>
+                      <a href="#">Скачайте документы и рекламные материалы</a>
+                    </li>
+                    <li>
+                      <a href="#">Найти авторизованный сервисный центр</a>
+                    </li>
+                    <li>
+                      <a href="#">Сообщить о неисправности оборудования</a>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li class="navigation__item">
                 <a class="navigation__link" href="#">Где купить</a>
-              </li>
-              <li class="navigation__item">
-                <a class="navigation__link" href="#">Сервис и поддержка</a>
               </li>
               <li class="navigation__item">
                 <a class="navigation__link" href="#">Решения</a>
@@ -399,7 +472,8 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="slider-button swiper-button-prev"></div>
+            <div class="slider-button swiper-button-next"></div>
           </div>
         </div>
       </section>
@@ -1003,11 +1077,246 @@
                 </figure>
               </li>
             </ul>
-            <div class="swiper-pagination"></div>
+            <div class="slider-button swiper-button-prev"></div>
+            <div class="slider-button swiper-button-next"></div>
           </div>
         </div>
       </section>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer__item footer__item_menu">
+        <div class="container">
+          <ul class="accordion footer__accordion">
+            <li class="accordion__item">
+              <button class="accordion__trigger" type="button">
+                <span>Продукция</span>
+                <svg class="dropdown-icon">
+                  <use xlink:href="img/sprite.svg#arrow"></use>
+                </svg>
+              </button>
+              <div class="drop-down-animation body accordion__body">
+                <div class="content accordion__content" role="list">
+                  <div class="accordion__column">
+                    <div role="listitem">
+                      <a class="footer__link" href="#">Шкафы холодильные</a>
+                    </div>
+                    <div role="listitem">
+                      <a class="footer__link" href="#">Столы холодильные</a>
+                    </div>
+                    <div role="listitem">
+                      <a class="footer__link" href="#">Камеры холодильные</a>
+                    </div>
+                    <div role="listitem">
+                      <a class="footer__link" href="#">Машины холодильные</a>
+                    </div>
+                    <div role="listitem">
+                      <a class="footer__link" href="#">Шоковая заморозка</a>
+                    </div>
+                    <div role="listitem">
+                      <a class="footer__link" href="#">Лари морозильные</a>
+                    </div>
+                    <div role="listitem">
+                      <a class="footer__link" href="#">
+                        Модульные стеллажные системы
+                      </a>
+                    </div>
+                  </div>
+                  <div class="accordion__column">
+                    <div role="listitem">
+                      <a class="footer__link" href="#">
+                        Оборудование для пекарен
+                      </a>
+                    </div>
+                    <div role="listitem">
+                      <a class="footer__link" href="#">Барные столы и шкафы</a>
+                    </div>
+                    <div role="listitem">
+                      <a class="footer__link" href="#">Шкафы для вызревания</a>
+                    </div>
+                    <div role="listitem">
+                      <a class="footer__link" href="#">Продуктоматы iCell</a>
+                    </div>
+                    <div role="listitem">
+                      <a class="footer__link" href="#">
+                        Термоконтейнеры FoodLine
+                      </a>
+                    </div>
+                    <div role="listitem">
+                      <a class="footer__link" href="#" target="_blank">
+                        Шкафы медицинские
+                        <svg class="accordion__redirect-arrow">
+                          <use xlink:href="img/sprite.svg#redirect-arrow"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="accordion__item">
+              <button class="accordion__trigger" type="button">
+                <span>Сервис и поддержка</span>
+                <svg class="dropdown-icon">
+                  <use xlink:href="img/sprite.svg#arrow"></use>
+                </svg>
+              </button>
+              <div class="drop-down-animation body accordion__body">
+                <div class="content accordion__content" role="list">
+                  <div class="accordion__column">
+                    <div role="listitem">
+                      <a class="footer__link" href="#">
+                        Найти авторизованный сервисный центр
+                      </a>
+                    </div>
+                    <div role="listitem">
+                      <a class="footer__link" href="#">
+                        Скачайте документы и рекламные материалы
+                      </a>
+                    </div>
+                    <div role="listitem">
+                      <a class="footer__link" href="#">
+                        Найти авторизованный сервисный центр
+                      </a>
+                    </div>
+                    <div role="listitem">
+                      <a class="footer__link" href="#" target="_blank">
+                        Сообщить о неисправности оборудования
+                        <svg class="accordion__redirect-arrow">
+                          <use xlink:href="img/sprite.svg#redirect-arrow"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a class="accordion__link" href="#">Где купить</a>
+            </li>
+            <li>
+              <a class="accordion__link" href="#">Решения</a>
+            </li>
+            <li>
+              <a class="accordion__link" href="#">О компании</a>
+            </li>
+            <li>
+              <a class="accordion__link" href="#">Медиа</a>
+            </li>
+            <li>
+              <a class="accordion__link" href="#">Новости</a>
+            </li>
+            <li>
+              <a class="accordion__link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__item">
+        <div class="container">
+          <ul class="footer__pick-list">
+            <li>
+              <a class="footer__link" href="#">
+                Подбор холодильного стола Polair
+                <sup>&trade;</sup>
+              </a>
+            </li>
+            <li>
+              <a class="footer__link" href="#">
+                Подбор холодильной машины Polair
+                <sup>&trade;</sup>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__item footer__item_down">
+        <div class="container">
+          <div>
+            <a class="logo" href="index.html">
+              <svg class="logo__icon" aria-label="POLAIR">
+                <use xlink:href="img/sprite.svg#logo"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="footer__means-of-communication">
+            <a class="footer__phone" href="tel:+74959376407">
+              <span>+7 (495) 937-64-07</span>
+              <small>многоканальный</small>
+            </a>
+            <ul class="social">
+              <li class="social__item">
+                <a class="social__link" href="#" target="_blank">
+                  <svg
+                    class="social__icon"
+                    aria-label="Наша страничка во Вконтакте"
+                  >
+                    <use xlink:href="img/sprite.svg#vk"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="#" target="_blank">
+                  <svg class="social__icon" aria-label="Наш канал в Телеграме">
+                    <use xlink:href="img/sprite.svg#telegram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="#" target="_blank">
+                  <svg class="social__icon" aria-label="Наш канал в Ютубе">
+                    <use xlink:href="img/sprite.svg#yt"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="#" target="_blank">
+                  <svg
+                    class="social__icon"
+                    aria-label="Наша страничка в Пинтересте"
+                  >
+                    <use xlink:href="img/sprite.svg#pinterest"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer__organization-type">
+              &copy; АО «Полаир-Недвижимость» 2022
+            </p>
+          </div>
+          <div>
+            <address class="address">
+              119334, город Москва, Ленинский проспект, дом 37, корпус 1,
+              помещение 2-5, этаж 4
+            </address>
+          </div>
+          <ul class="footer__additionally">
+            <li>
+              Сделано в
+              <a class="bold" href="#" target="_blank">CULT</a>
+            </li>
+            <li>
+              <a href="#">Политика конфиденциальности</a>
+            </li>
+            <li>
+              <a href="#">Карта сайта</a>
+            </li>
+          </ul>
+          <div>
+            <small
+              class="footer__legal-information footer__legal-information_mgb"
+            >
+              При использовании материалов сайта ссылка обязательна.
+            </small>
+            <small class="footer__legal-information">
+              Данный интернет-сайт носит исключительно информационный характер,
+              и информация, размещённая на нём, не является публичной офертой,
+              определяемой положениями ст. 437 ГК РФ.
+            </small>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

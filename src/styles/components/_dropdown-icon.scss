@@ -1,0 +1,8 @@
+.dropdown-icon {
+  flex-shrink: 0;
+  width: rem(17);
+  height: rem(17);
+  fill: var(--color-prussianBlue);
+  transform: rotate(90deg);
+  transition: transform $transitionDuration;
+}

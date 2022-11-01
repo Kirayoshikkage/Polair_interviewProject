@@ -1,0 +1,7 @@
+.drop-down-animation {
+  overflow: hidden;
+  max-height: 0;
+  visibility: hidden;
+  transition-property: max-height, visibility;
+  transition-duration: $transitionDuration;
+}

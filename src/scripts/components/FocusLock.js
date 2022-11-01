@@ -6,6 +6,8 @@ export default class FocusLock {
     this._container = container;
     this._mutationObserver = mutationObserver;
     this._disableOnMobileDevice = disableOnMobileDevice;
+
+    this.init();
   }
 
   _listElementsToBlock = new Set();

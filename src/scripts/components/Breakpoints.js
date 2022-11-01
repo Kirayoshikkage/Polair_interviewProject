@@ -4,6 +4,8 @@ import debounce from '../helpers/debounce.js';
 export default class Breakpoints {
   constructor(breakpoints) {
     this._breakpoints = breakpoints;
+
+    this.init();
   }
 
   _listFunctionsForUpdateActualBreakpoint = {

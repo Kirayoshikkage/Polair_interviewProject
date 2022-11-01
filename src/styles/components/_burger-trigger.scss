@@ -8,7 +8,7 @@
     width: rem(24);
     height: rem(3);
     background-color: var(--color-codGray);
-    transition-property: transform, opacity, visibility, background;
+    transition-property: transform, opacity, visibility;
     transition-duration: $transitionDuration;
   }
 
@@ -26,6 +26,14 @@
 
       &:nth-child(3) {
         transform: rotate(-45deg) translate(rem(7), rem(-7));
+      }
+    }
+  }
+
+  @include mouse-device {
+    &:focus {
+      .burger-trigger__item {
+        background-color: #60c0c3;
       }
     }
   }

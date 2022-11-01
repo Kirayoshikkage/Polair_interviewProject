@@ -5,7 +5,6 @@
   &__link {
     display: inline-block;
     margin: 0 0 rem(8);
-    outline: none;
     width: rem(180);
     height: rem(48);
   }
@@ -30,6 +29,10 @@
   }
 
   @include mouse-device {
+    .brand__link:focus {
+      outline: none;
+    }
+
     .brand__link:focus > .brand__logo {
       fill: var(--color-prussianBlue);
     }

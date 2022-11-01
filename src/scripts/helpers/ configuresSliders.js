@@ -1,5 +1,5 @@
 import Swiper, {
-  Pagination, A11y, Keyboard,
+  A11y, Keyboard, Navigation,
 } from 'swiper';
 import FocusLockSliders from '../components/FocusLockSliders.js';
 import getFontSizeBody from './getFontSizeBody.js';
@@ -28,23 +28,25 @@ function blocksHiddenElementsFromScreenreader(swiper, selectorContent) {
 
 function heroSlider() {
   const slider = '.hero-swiper';
+  const nextBtn = `${slider} .swiper-button-next`;
+  const prevBtn = `${slider} .swiper-button-prev`;
   const swiperWrapper = document.querySelector(`${slider} .swiper-wrapper`);
   // eslint-disable-next-line no-unused-vars
   const swiper = new Swiper(slider, {
-    modules: [Pagination, Keyboard, A11y],
+    modules: [Navigation, Keyboard, A11y],
     keyboard: {
       enabled: true,
     },
     a11y: {
       firstSlideMessage: 'Это первый слайд',
       lastSlideMessage: 'Это последний слайд',
-      paginationBulletMessage: 'Перейти к слайду {{index}}',
+      nextSlideMessage: 'Следующий слайд',
+      prevSlideMessage: 'Предыдущий слайд',
     },
     watchSlidesProgress: true,
-    pagination: {
-      el: '.swiper-pagination',
-      dynamicBullets: true,
-      clickable: true,
+    navigation: {
+      nextEl: nextBtn,
+      prevEl: prevBtn,
     },
   });
 
@@ -65,21 +67,28 @@ function heroSlider() {
 
 function ourBrandsSlider() {
   const slider = '.our-brands-slider';
+  const swiperWrapper = document.querySelector(`${slider} .swiper-wrapper`);
+  const nextBtn = `${slider} .swiper-button-next`;
+  const prevBtn = `${slider} .swiper-button-prev`;
+  const focusLock = new FocusLockSliders({
+    container: swiperWrapper,
+    exception: '.swiper-slide-visible',
+  });
   const swiper = new Swiper(slider, {
-    modules: [Pagination, Keyboard, A11y],
+    modules: [Navigation, Keyboard, A11y],
     keyboard: {
       enabled: true,
     },
     a11y: {
       firstSlideMessage: 'Это первый слайд',
       lastSlideMessage: 'Это последний слайд',
-      paginationBulletMessage: 'Перейти к слайду {{index}}',
+      nextSlideMessage: 'Следующий слайд',
+      prevSlideMessage: 'Предыдущий слайд',
     },
     watchSlidesProgress: true,
-    pagination: {
-      el: '.swiper-pagination',
-      dynamicBullets: true,
-      clickable: true,
+    navigation: {
+      nextEl: nextBtn,
+      prevEl: prevBtn,
     },
     init: false,
     breakpoints: {
@@ -94,12 +103,16 @@ function ourBrandsSlider() {
     on: {
       afterInit() {
         blocksHiddenElementsFromScreenreader(swiper, '.brand');
+
+        focusLock.init();
       },
       breakpoint(swiperParam, breakpointParams) {
         if (!swiperParam.initialized) return;
 
         const { enabled } = breakpointParams;
         const { slides, activeIndex } = swiperParam;
+
+        swiper.setProgress(0);
 
         slides.forEach((slide) => {
           if (!enabled) {
@@ -112,6 +125,13 @@ function ourBrandsSlider() {
 
           slide.querySelector('.brand').setAttribute('aria-hidden', true);
         });
+
+        setTimeout(() => {
+          focusLock.updatesFocusLock();
+        }, 200);
+      },
+      slideChangeTransitionEnd() {
+        focusLock.updatesFocusLock();
       },
     },
   });

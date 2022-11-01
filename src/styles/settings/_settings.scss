@@ -106,3 +106,14 @@ body {
     max-width: 100%;
   }
 }
+
+a,
+button {
+  @include mouse-device {
+    outline: none;
+
+    &:focus {
+      outline: rem(2) solid crimson;
+    }
+  }
+}

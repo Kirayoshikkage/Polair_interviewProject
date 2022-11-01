@@ -1,0 +1,12 @@
+.slider-button {
+  border-radius: 100%;
+  width: rem(50);
+  height: rem(50);
+  background-color: var(--color-prussianBlue);
+
+  &::after {
+    font-weight: 600;
+    font-size: rem(24);
+    color: var(--color-white);
+  }
+}

@@ -26,6 +26,10 @@
 
     &_down {
       padding: 1rem 0 0;
+
+      .container {
+        position: relative;
+      }
     }
   }
 
@@ -67,29 +71,87 @@
   }
 
   .navigation {
-    overflow-x: auto;
+    overflow: auto;
     padding-bottom: 1rem;
 
     &__list {
       display: flex;
       justify-content: space-between;
-      gap: rem(24);
-
-      @include touch-device {
-        gap: rem(10);
-      }
+      gap: rem(10);
     }
 
     &__item {
       flex-shrink: 0;
     }
 
-    @include touch-device {
-      &__link {
-        display: inline-block;
-        border-radius: rem(4);
-        padding: rem(8) rem(12);
-        background-color: var(--color-athensGray);
+    &__link {
+      display: inline-block;
+      outline: none;
+      border-radius: rem(4);
+      padding: rem(8) rem(12);
+      background-color: var(--color-athensGray);
+
+      @include mouse-device {
+        &:focus {
+          color: var(--color-white);
+          background-color: var(--color-prussianBlue);
+        }
+      }
+    }
+  }
+
+  .dropdown-content {
+    &__trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+
+      @include mouse-device {
+        &:focus {
+          color: var(--color-white);
+          background-color: var(--color-prussianBlue);
+
+          .dropdown-icon {
+            fill: var(--color-white);
+          }
+        }
+      }
+    }
+
+    &__body {
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      top: 100%;
+      z-index: 2;
+      border-radius: 0 0 rem(4) rem(4);
+      background-color: var(--color-prussianBlue);
+    }
+
+    &__content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    a {
+      font-size: rem(14);
+      line-height: lh(22, 14);
+      color: var(--color-ecruWhite);
+    }
+
+    &.active {
+      .dropdown-content__trigger {
+        color: var(--color-white);
+        background-color: var(--color-prussianBlue);
+      }
+
+      .dropdown-icon {
+        fill: var(--color-white);
+        transform: rotate(-90deg);
       }
     }
   }

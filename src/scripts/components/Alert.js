@@ -12,6 +12,8 @@ export default class Alert {
 
     this._animation = animation;
     this._focusLock = focusLock;
+
+    this.init();
   }
 
   _isOpen = false;
@@ -39,7 +41,7 @@ export default class Alert {
   _addsEventListenersTrigger() {
     if (!this._trigger) return;
 
-    this._trigger.addEventListener('pointerup', () => {
+    this._trigger.addEventListener('pointerup', (e) => {
       this.toggle();
     });
 
