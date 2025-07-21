@@ -1,4 +1,4 @@
-# Polair
+# Polair http://polair.matvie1x.beget.tech/
 
 ## Установка проекта
 ```
